@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Quiz.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Quiz.Core.Answer">
+            <summary>
+            Answer for a quiz question
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Answer.Text">
+            <summary>
+            Get text of answer
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Answer.IsTrue">
+            <summary>
+            Returns true, if answer is correct
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Answer.IsDisabled">
+            <summary>
+            Returns true, if answer is disabled
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Answer.IsChecked">
+            <summary>
+            Returns true, if answer is checked by user
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.Answer.#ctor(System.String,System.Boolean)">
+            <summary>
+            Create an answer
+            </summary>
+            <param name="text">Text to display</param>
+            <param name="isTrue">True, if it is a correct answer</param>
+        </member>
+        <member name="M:Quiz.Core.Answer.#ctor(System.String)">
+            <summary>
+            Create a wrong answer
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Quiz.Core.GameStatus">
+            <summary>
+            Status of the game
+            </summary>
+        </member>
+        <member name="F:Quiz.Core.GameStatus.HasLost">
+            <summary>
+            User lost the game
+            </summary>
+        </member>
+        <member name="F:Quiz.Core.GameStatus.HasFinished">
+            <summary>
+            User has successfully finished the game
+            </summary>
+        </member>
+        <member name="F:Quiz.Core.GameStatus.Active">
+            <summary>
+            Game is active 
+            </summary>
+        </member>
+        <member name="F:Quiz.Core.GameStatus.Quit">
+            <summary>
+            Use has quit the game
+            </summary>
+        </member>
+        <member name="T:Quiz.Core.Game">
+            <summary>
+            Game with questions
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Game.Status">
+            <summary>
+            Get the status of the game
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Game.HasFinished">
+            <summary>
+            Returns true, if all questions were solved successfully.
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Game.IsActive">
+            <summary>
+            true if game is active
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.Game.#ctor(System.Boolean)">
+            <summary>
+            Create a game
+            </summary>
+            <param name="random">If true, all answers will be randomly ordered</param>
+        </member>
+        <member name="M:Quiz.Core.Game.Stop">
+            <summary>
+            Stop game
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Game.Level">
+            <summary>
+            Get current level
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.Game.New">
+            <summary>
+            Start new game
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.Game.ValidateCurrentQuestion">
+            <summary>
+            Validates the current question
+            </summary>
+            <returns>true if current answer is correct, otherwise false</returns>
+        </member>
+        <member name="M:Quiz.Core.Game.AddQuestion(Quiz.Core.Question,System.Boolean)">
+            <summary>
+            Add a question to the game
+            </summary>
+            <param name="question">Question to add</param>
+            <param name="random">true, answers will be mixed</param>
+        </member>
+        <member name="P:Quiz.Core.Game.CurrentQuestion">
+            <summary>
+            Get the current question or null, if no question is available
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Game.NextQuestion">
+            <summary>
+            Get next question in game.
+            </summary>
+            <returns>Get the next question object or null if none is available.</returns>
+        </member>
+        <member name="P:Quiz.Core.Game.HasNextQuestion">
+            <summary>
+            Check if it is possible to load a next question
+            </summary>
+        </member>
+        <member name="T:Quiz.Core.QuestionException">
+            <summary>
+            Exception when adding a faulty question
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.QuestionException.#ctor">
+            <summary>
+            Empty exception
+            </summary>
+        </member>
+        <member name="M:Quiz.Core.QuestionException.#ctor(System.String)">
+            <summary>
+            Exception
+            </summary>
+            <param name="message">Message, describing the problem</param>
+        </member>
+        <member name="M:Quiz.Core.QuestionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Exception
+            </summary>
+            <param name="message">Message, describing the problem</param>
+            <param name="inner">inner exception of QuestionException</param>
+        </member>
+        <member name="T:Quiz.Core.Question">
+            <summary>
+            Question for a quiz
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Question.Text">
+            <summary>
+            Get the text of the question
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Question.Answers">
+            <summary>
+            Get a readonly list of answers.
+            </summary>
+            <returns>A List of answers.</returns>
+        </member>
+        <member name="M:Quiz.Core.Question.#ctor(System.String)">
+            <summary>
+            Create a question
+            </summary>
+            <param name="text">Text to display</param>
+        </member>
+        <member name="M:Quiz.Core.Question.AddAnswer(Quiz.Core.Answer)">
+            <summary>
+            Add an answer to the list of answers
+            </summary>
+            <param name="answer">Answer to add</param>
+        </member>
+        <member name="P:Quiz.Core.Question.IsSolved">
+            <summary>
+            Check Answers, returns true if all answers are correct. Otherwise the property
+            is false.
+            </summary>
+        </member>
+        <member name="P:Quiz.Core.Question.CheckedAnswers">
+            <summary>
+            checked answers from user
+            </summary>
+        </member>
+    </members>
+</doc>
